@@ -16,7 +16,6 @@
 
 # This variable is set first, so it can be overridden
 # by BoardConfigVendor.mk
-#USE_CAMERA_STUB := true
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_LIBSECRIL_STUB := true
 
@@ -75,11 +74,6 @@ BOARD_USES_PROPRIETARY_OMX := SAMSUNG
 
 # Audio
 BOARD_USE_YAMAHAPLAYER := true
-
-# Camera
-#ifeq ($(USE_CAMERA_STUB),false)
-#BOARD_CAMERA_LIBRARIES := libcamera
-#endif
 
 # Wifi
 #BOARD_WLAN_DEVICE                := bcmdhd
