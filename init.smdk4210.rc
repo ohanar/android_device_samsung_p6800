@@ -18,24 +18,13 @@ on early-init
 # Disable CFQ slice idle delay
     write /sys/block/mmcblk0/queue/iosched/slice_idle 0
 
-# FIXME: permissions for tvout
-	chmod 0777 /dev/graphics/fb0
-	chmod 0777 /dev/graphics/fb10
-	chmod 0777 /dev/graphics/fb11	
-    chown media graphics /sys/class/switch/hdmi
-    chmod 0777 /sys/class/switch/hdmi
-
-# FIXME: permission for HDMI audio path
-    chown media audio /sys/class/hdmi_audio/hdmi_audio/hdmi_audio_set_ext
-	chmod 0777 /sys/class/hdmi_audio/hdmi_audio/hdmi_audio_set_ext
-
 on fs
 # mount ext4 partitions
     mount ext4 /dev/block/mmcblk0p9 /system
     mount ext4 /dev/block/mmcblk0p9 /system noatime wait ro
     mount ext4 /dev/block/mmcblk0p7 /cache nosuid nodev noatime wait
-    mount ext4 /dev/block/mmcblk0p10 /data nosuid nodev noatime wait noauto_da_alloc
-    mount ext4 /dev/block/mmcblk0p12 /preload nosuid nodev noatime wait
+    mount ext4 /dev/block/mmcblk0p9 /data nosuid nodev noatime wait noauto_da_alloc
+    mount ext4 /dev/block/mmcblk0p10 /preload nosuid nodev noatime wait
     
     mount ext4 /dev/block/mmcblk0p1 /efs nosuid nodev noatime wait
     mkdir /efs/bluetooth
@@ -361,12 +350,6 @@ service bdaddr /system/bin/bdaddr_read
     disabled
     oneshot
 
-# TVout
-service TvoutService_C /system/bin/bintvoutservice
-     class main
-     user system
-     group graphics 
-    
 # bugreport is triggered by holding down volume down, volume up and power
 service bugreport /system/bin/bugmailer.sh -v
     class main
