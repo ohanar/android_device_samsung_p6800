@@ -28,12 +28,12 @@ on init
     #mount /tmp /tmp tmpfs   
 
 on fs
-	mount ext4 /dev/block/mmcblk0p9 /system wait ro
-	mount ext4 /dev/block/mmcblk0p10 /data nosuid nodev noatime wait
+	mount ext4 /dev/block/mmcblk0p8 /system wait ro
+	mount ext4 /dev/block/mmcblk0p9 /data nosuid nodev noatime wait
 
 	mkdir /data/log 0777
 	mkdir /data/anr 0777
-	mount ext4 /dev/block/mmcblk0p10 /data remount ro
+	mount ext4 /dev/block/mmcblk0p9 /data remount ro
 
 	chmod 0666 /dev/log/radio
 	chmod 0666 /dev/log/main

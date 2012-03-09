@@ -26,7 +26,6 @@
 /dev/srp_ctrl             0666   system     audio
 /dev/umts*                0660   system     radio
 /dev/link_pm              0660   system     radio
-/dev/block/mmcblk0p8      0660   system     radio
 /dev/akm8975              0660   system     system
 /dev/accelerometer        0660   system     system
 /dev/graphics/fb0         0777   root       graphics
