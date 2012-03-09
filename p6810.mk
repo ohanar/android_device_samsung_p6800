@@ -52,8 +52,9 @@ PRODUCT_COPY_FILES += \
     device/samsung/p6810/usr/idc/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc
 
 # Kernel modules for ramdisk
-RAMDISK_MODULES := $(addprefix device/samsung/p6810/modules/,dhd.ko j4fs.ko \
-	scsi_wait_scan.ko Si4709_driver.ko)
+RAMDISK_MODULES := $(addprefix device/samsung/p6810/modules/,cfg80211.ko \
+    gspca_main.ko j4fs.ko lib80211.ko mac80211.ko pcmcia_core.ko pcmcia.ko \
+    pcmcia_rsrc.ko ray_cs.ko scsi_wait_scan.ko)
 PRODUCT_COPY_FILES += $(foreach module,\
 	$(RAMDISK_MODULES),\
 	$(module):root/lib/modules/$(notdir $(module)))
