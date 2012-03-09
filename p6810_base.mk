@@ -66,7 +66,7 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-	lights.exynos4
+	lights.s5pc210
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -130,7 +130,3 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=mtp
 
 $(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
-
-# Include exynos4 platform specific parts
-#$(call inherit-product, hardware/samsung/exynos4/exynos4.mk)
-#$(call inherit-product, hardware/samsung/exynos4/Android.mk)
