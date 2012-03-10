@@ -305,6 +305,8 @@ on boot
     setprop status.battery.level_raw  50
     setprop status.battery.level_scale 9
 
+service sdcard /system/bin/sdcard /data/media 1023 1023
+ 
 service wpa_supplicant /system/bin/wpa_supplicant \
     -Dnl80211 -puse_p2p_group_interface=1 -e/data/misc/wifi/entropy.bin
     class main
