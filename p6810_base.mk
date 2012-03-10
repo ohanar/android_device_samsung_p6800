@@ -31,9 +31,9 @@ PRODUCT_COPY_FILES := \
 PRODUCT_COPY_FILES += \
 	device/samsung/p6810/configs/asound.conf:system/etc/asound.conf
 
-# Vold
+# Vold and Storage
 PRODUCT_COPY_FILES += \
-	device/samsung/p6810/configs/vold.fstab:system/etc/vold.fstab \
+    device/samsung/p6810/configs/vold.fstab:system/etc/vold.fstab \
 
 # Bluetooth configuration files
 PRODUCT_COPY_FILES += \
@@ -45,7 +45,7 @@ PRODUCT_COPY_FILES += \
 	device/samsung/p6810/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
 	device/samsung/p6810/configs/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
 
-PRODUCT_PROPERTY_OVERRIDES := \
+PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.interface=wlan0 \
 	wifi.supplicant_scan_interval=15
 
