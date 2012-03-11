@@ -121,6 +121,9 @@ adb pull /system/lib/libsomxwmv8d.so ../../../vendor/$MANUFACTURER/$COMMON/propr
 
 # SENSORS
 adb pull /system/lib/libakm.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libakm.so
+adb pull /system/lib/libmllite.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libmllite.so
+adb pull /system/lib/libmlplatform.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libmlplatform.so
+adb pull /system/lib/libmpl.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libmpl.so
 adb pull /system/lib/hw/sensors.s5pc210.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/sensors.s5pc210.so
 
 # GPS
@@ -307,6 +310,9 @@ PRODUCT_COPY_FILES += \\
 # SENSORS
 PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libakm.so:system/lib/libakm.so \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/libmllite.so:system/lib/libmllite.so \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/libmlplatform.so:system/lib/libmlplatform.so \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/libmpl.so:system/lib/libmpl.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/sensors.s5pc210.so:system/lib/hw/sensors.s5pc210.so
 
 # GPS
