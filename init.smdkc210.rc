@@ -286,9 +286,19 @@ service iprenew_p2p /system/bin/dhcpcd -n
 service sdcard /system/bin/sdcard /data/media 1023 1023
     class late_start
 
-#
 # TVout 
 service tvout /system/bin/tvoutserver 
     class main 
     user system 
     group graphics
+
+# Always start root adbd on userdebug and eng builds
+on property:ro.debuggable=1
+    setprop service.adb.root 1
+
+on property:service.adb.root=1
+    setprop ro.secure 0
+    restart adbd
+    setprop ro.secure 1
+
+
