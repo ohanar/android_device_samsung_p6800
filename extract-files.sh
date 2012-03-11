@@ -79,6 +79,7 @@ adb pull /system/lib/libUMP.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary
 # HWCOMPOSER
 adb pull /system/lib/hw/hwcomposer.s5pc210.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/hwcomposer.s5pc210.so
 adb pull /system/bin/tvoutserver ../../../vendor/$MANUFACTURER/$COMMON/proprietary/tvoutserver
+adb pull /system/lib/lib_tvoutengine.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/lib_tvoutengine.so
 adb pull /system/lib/libfimc.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libfimc.so
 adb pull /system/lib/libfimg.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libfimg.so
 adb pull /system/lib/libtvout.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libtvout.so
@@ -262,6 +263,7 @@ PRODUCT_COPY_FILES += \\
 PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/hwcomposer.s5pc210.so:system/lib/hw/hwcomposer.s5pc210.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/tvoutserver:system/bin/tvoutserver \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/lib_tvoutengine.so:system/lib/lib_tvoutengine.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libfimc.so:system/lib/libfimc.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libfimg.so:system/lib/libfimg.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libtvout.so:system/lib/libtvout.so \\
