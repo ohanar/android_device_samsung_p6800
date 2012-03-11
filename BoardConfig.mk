@@ -73,6 +73,7 @@ BOARD_USES_PROPRIETARY_OMX := SAMSUNG
 
 # Audio
 BOARD_USE_YAMAHAPLAYER := true
+BOARD_USES_AUDIO_LEGACY := true
 
 # Wifi
 #BOARD_WLAN_DEVICE                := bcmdhd
