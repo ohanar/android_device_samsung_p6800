@@ -1,2 +1,2 @@
-require board=smdk4210
+require board=smdkc210
 

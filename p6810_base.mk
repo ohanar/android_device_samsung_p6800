@@ -23,9 +23,10 @@ PRODUCT_LOCALES += hdpi
 # Init files
 PRODUCT_COPY_FILES := \
 	device/samsung/p6810/lpm.rc:root/lpm.rc \
-	device/samsung/p6810/init.smdk4210.usb.rc:root/init.smdk4210.usb.rc \
-	device/samsung/p6810/init.smdk4210.rc:root/init.smdk4210.rc \
-	device/samsung/p6810/ueventd.smdk4210.rc:root/ueventd.smdk4210.rc
+	device/samsung/p6810/init.smdkc210.usb.rc:root/init.smdkc210.usb.rc \
+	device/samsung/p6810/init.smdkc210.rc:root/init.smdkc210.rc \
+	device/samsung/p6810/ueventd.smdkc210.rc:root/ueventd.smdkc210.rc \
+	device/samsung/p6810/ueventd.smdkv310.rc:root/ueventd.smdkv310.rc
 
 # Audio
 PRODUCT_COPY_FILES += \

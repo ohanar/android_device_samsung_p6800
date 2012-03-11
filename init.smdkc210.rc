@@ -1,4 +1,4 @@
-import init.smdk4210.usb.rc
+import init.smdkc210.usb.rc
 
 on early-init
 	export EXTERNAL_STORAGE /mnt/sdcard

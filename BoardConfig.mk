@@ -33,7 +33,7 @@ COMMON_GLOBAL_CFLAGS += -DSURFACEFLINGER_FORCE_SCREEN_RELEASE
 endif
 
 TARGET_BOARD_PLATFORM := s5pc210
-TARGET_BOOTLOADER_BOARD_NAME := smdk4210
+TARGET_BOOTLOADER_BOARD_NAME := smdkc210
 TARGET_BOARD_INFO_FILE := device/samsung/p6810/board-info.txt
 
 TARGET_NO_BOOTLOADER := true
@@ -104,9 +104,8 @@ BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 BOARD_MTP_DEVICE := "/dev/usb_mtp_gadget"
 
 # Recovery
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/p6810/recovery/recovery_keys.c
 BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/p6810/recovery/graphics.c
-BOARD_UMS_LUNFILE := "/sys/class/android_usb/f_mass_storage/lun0/file"
+#BOARD_UMS_LUNFILE := "/sys/class/android_usb/f_mass_storage/lun0/file"
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true

@@ -1,0 +1,13 @@
+/dev/mali                 0666   system     system
+/dev/ump                  0666   system     graphics
+/dev/video0               0666   system     m2m
+/dev/video1               0666   system     camera
+/dev/video2               0666   system     m2m
+/dev/video3               0666   system     m2m
+/dev/video4               0666   system     m2m
+/dev/input/*              0666   root       input
+# for Sensor HAL
+/dev/akm8975              0660   system     system
+/dev/accelerometer        0660   system     system
+
+/dev/s3c2410_serial*	  0660	 root	    system
