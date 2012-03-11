@@ -53,8 +53,8 @@ __BEGIN_DECLS
 /*****************************************************************************/
 
 #define AKM_DEVICE_NAME     "/dev/akm8975"
-#define CM_DEVICE_NAME      "/dev/i2c11" // FIXME Proximity
-#define LS_DEVICE_NAME      "/dev/i2c11" // FIXME Lig
+#define CM_DEVICE_NAME      "/dev/i2c-11" // FIXME Proximity
+#define LS_DEVICE_NAME      "/dev/i2c-11" // FIXME Lig
 
 /*
     E/Sensors ( 2656): AkmSensor: processing event (type=0, code=0)

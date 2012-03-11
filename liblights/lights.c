@@ -40,13 +40,7 @@ static pthread_mutex_t g_lock = PTHREAD_MUTEX_INITIALIZER;
 static int g_enable_touchlight = -1;
 
 char const*const PANEL_FILE
-        = "/sys/class/backlight/panel/brightness";
-
-char const*const BUTTON_POWER
-        = "/sys/class/sec/sec_touchkey/enable_disable";
-
-char const*const BUTTON_FILE
-        = "/sys/class/sec/sec_touchkey/brightness";
+        = "/sys/class/backlight/backlight/brightness";
 
 void init_globals(void)
 {
@@ -119,9 +113,6 @@ set_light_backlight(struct light_device_t* dev,
     pthread_mutex_lock(&g_lock);
     err = write_int(PANEL_FILE, brightness);
 
-    if (g_enable_touchlight == -1 || g_enable_touchlight > 0)
-        err = write_int(BUTTON_FILE, brightness > 0 ? 1 : 0);
-
     pthread_mutex_unlock(&g_lock);
 
     return err;
@@ -138,15 +129,7 @@ static int
 set_light_buttons(struct light_device_t* dev,
         struct light_state_t const* state)
 {
-    int err = 0;
-    int on = is_lit(state);
-
-    pthread_mutex_lock(&g_lock);
-    LOGD("set_light_button on=%d\n", on ? 1 : 0);
-    err = write_int(BUTTON_FILE, on ? 1:0);
-    pthread_mutex_unlock(&g_lock);
-
-    return err;
+    return 0;
 }
 
 static int
