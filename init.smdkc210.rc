@@ -351,6 +351,11 @@ service bdaddr /system/bin/bdaddr_read
     disabled
     oneshot
 
+service tvout /system/bin/tvoutserver
+    class late_start
+    user system
+    group graphics
+
 # bugreport is triggered by holding down volume down, volume up and power
 service bugreport /system/bin/bugmailer.sh -v
     class main
