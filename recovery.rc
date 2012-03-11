@@ -46,7 +46,17 @@ service recovery /sbin/recovery
 service adbd /sbin/adbd recovery
     disabled
 
-# Always start adbd on userdebug and eng builds
+# Always start root adbd on userdebug and eng builds
 on property:ro.debuggable=1
-    setprop sys.usb.config mass_storage,adb
+    setprop service.adb.root 1
 
+on property:service.adb.root=1
+    setprop ro.secure 0
+    restart adbd
+    setprop ro.secure 1
+
+on property:persist.service.adb.enable=1
+    start adbd
+
+on property:persist.service.adb.enable=0
+    stop adbd
