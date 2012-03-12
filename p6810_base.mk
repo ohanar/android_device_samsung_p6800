@@ -13,26 +13,26 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-DEVICE_PACKAGE_OVERLAYS := device/samsung/p6810/overlay
+DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
 # This device is hdpi.
-PRODUCT_AAPT_CONFIG := normal hdpi
+PRODUCT_AAPT_CONFIG := large hdpi sw600dp sw720dp
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_LOCALES += hdpi
 
 # Init files
 PRODUCT_COPY_FILES := \
-	device/samsung/p6810/lpm.rc:root/lpm.rc \
-	device/samsung/p6810/init.smdkc210.rc:root/init.smdkc210.rc \
-	device/samsung/p6810/ueventd.smdkc210.rc:root/ueventd.smdkc210.rc
+	$(LOCAL_PATH)/lpm.rc:root/lpm.rc \
+	$(LOCAL_PATH)/init.smdkc210.rc:root/init.smdkc210.rc \
+	$(LOCAL_PATH)/ueventd.smdkc210.rc:root/ueventd.smdkc210.rc
 
 # Audio
 PRODUCT_COPY_FILES += \
-	device/samsung/p6810/configs/asound.conf:system/etc/asound.conf
+	$(LOCAL_PATH)/configs/asound.conf:system/etc/asound.conf
 
 # Vold and Storage
 PRODUCT_COPY_FILES += \
-    device/samsung/p6810/configs/vold.fstab:system/etc/vold.fstab \
+    $(LOCAL_PATH)/configs/vold.fstab:system/etc/vold.fstab
 
 # Bluetooth configuration files
 PRODUCT_COPY_FILES += \
@@ -40,28 +40,30 @@ PRODUCT_COPY_FILES += \
 
 # Wifi
 PRODUCT_COPY_FILES += \
-	device/samsung/p6810/configs/nvram_net.txt:system/etc/nvram_net.txt \
-	device/samsung/p6810/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-	device/samsung/p6810/configs/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
+	$(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.interface=wlan0 \
 	wifi.supplicant_scan_interval=15
 
-$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
-
 # Gps
 PRODUCT_COPY_FILES += \
-	device/samsung/p6810/configs/gps.conf:system/etc/gps.conf \
-	device/samsung/p6810/configs/sirfgps.conf:system/etc/sirfgps.conf
+	$(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf \
+	$(LOCAL_PATH)/configs/sirfgps.conf:system/etc/sirfgps.conf
 
 # Packages
 PRODUCT_PACKAGES := \
     com.android.future.usb.accessory \
+	librs_jni \
     SamsungServiceMode
 
+# Audio packages
+PRODUCT_PACKAGSE += \
+    audio.a2dp.default \
+    libaudioutils
+
 PRODUCT_COPY_FILES += \
-	device/samsung/p6810/configs/media_profiles.xml:system/etc/media_profiles.xml
+	$(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -69,58 +71,62 @@ PRODUCT_PACKAGES += \
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
-	static_busybox \
 	make_ext4fs \
-	setup_fs
-
-# Live Wallpapers
-PRODUCT_PACKAGES += \
-	Galaxy4 \
-	HoloSpiralWallpaper \
-	LiveWallpapers \
-	LiveWallpapersPicker \
-	MagicSmokeWallpapers \
-	NoiseField \
-	PhaseBeam \
-	VisualizationWallpapers \
-	librs_jni
-
+	setup_fs \
+	static_busybox
+        
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
-	frameworks/base/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
-	frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
-	frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-	frameworks/base/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-	frameworks/base/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
-	frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-	frameworks/base/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
-	frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
-	frameworks/base/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
-	frameworks/base/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
-	frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-	frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-	frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-	frameworks/base/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
-	frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
-	frameworks/base/data/etc/android.hardware.touchscreen.xml:system/etc/permissions/android.hardware.touchscreen.xml \
-	frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-	frameworks/base/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
-	frameworks/base/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
-	frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-	frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-	frameworks/base/data/etc/android.software.sip.xml:system/etc/permissions/android.software.sip.xml \
-	frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
+    frameworks/base/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
+    frameworks/base/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
+    frameworks/base/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/base/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
+    frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+    frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/base/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
+    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+    frameworks/base/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
+    frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
+    frameworks/base/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+    frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
+    frameworks/base/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
+    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
-# Feature live wallpaper
+# Keylayout
 PRODUCT_COPY_FILES += \
-	packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
+    $(LOCAL_PATH)/keylayout/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
+    $(LOCAL_PATH)/keylayout/sec_key.kl:system/usr/keylayout/sec_key.kl \
+    $(LOCAL_PATH)/keylayout/sec_power_key.kl:system/usr/keylayout/sec_power_key.kl \
+    $(LOCAL_PATH)/keylayout/sec_keyboard.kl:system/usr/keylayout/sec_keyboard.kl \
+    $(LOCAL_PATH)/keylayout/Vendor_04e8_Product_7021.kl:system/usr/keylayout/Vendor_04e8_Product_7021.kl \
+    $(LOCAL_PATH)/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc
 
-PRODUCT_PROPERTY_OVERRIDES += \
+# Kernel modules for ramdisk
+RAMDISK_MODULES := $(addprefix $(LOCAL_PATH)/modules/,cfg80211.ko \
+    gspca_main.ko j4fs.ko lib80211.ko mac80211.ko pcmcia_core.ko pcmcia.ko \
+    pcmcia_rsrc.ko ray_cs.ko scsi_wait_scan.ko)
+PRODUCT_COPY_FILES += $(foreach module,\
+	$(RAMDISK_MODULES),\
+	$(module):root/lib/modules/$(notdir $(module)))
+
+# Other kernel modules not in ramdisk
+PRODUCT_COPY_FILES += $(foreach module,\
+	$(filter-out $(RAMDISK_MODULES),$(wildcard $(LOCAL_PATH)/modules/*.ko)),\
+	$(module):system/lib/modules/$(notdir $(module)))
+
+# Kernel modules for recovery ramdisk
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/modules/j4fs.ko:recovery/root/lib/modules/j4fs.ko
+
+PRODUCT_CHARACTERISTICS := tablet
+
+#PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=131072 \
 	hwui.render_dirty_regions=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sf.lcd_density=240
+	ro.sf.lcd_density=197
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
@@ -128,4 +134,23 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=mtp
 
-$(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
+# Feature live wallpaper
+#PRODUCT_COPY_FILES += \
+	packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
+
+# Live Wallpapers
+#PRODUCT_PACKAGES += \
+	Galaxy4 \
+	HoloSpiralWallpaper \
+	LiveWallpapers \
+	LiveWallpapersPicker \
+	MagicSmokeWallpapers \
+	NoiseField \
+	PhaseBeam \
+	VisualizationWallpapers
+
+# Rotated and resized bootanimation
+PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/media/bootanimation.zip:system/media/bootanimation.zip
+
+$(call inherit-product, frameworks/base/build/tablet-dalvik-heap.mk)

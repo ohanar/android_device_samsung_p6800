@@ -18,13 +18,13 @@
 $(call inherit-product, vendor/cm/config/gsm.mk)
 
 # Release name
-PRODUCT_RELEASE_NAME := TAB7.7WIFI
+PRODUCT_RELEASE_NAME := GT-P6810
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/p6810/full_p6810.mk)
+$(call inherit-product, $(LOCAL_PATH)/p6810.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := p6810

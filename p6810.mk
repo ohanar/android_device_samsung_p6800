@@ -14,63 +14,24 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/samsung/p6810/p6810_base.mk)
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+    LOCAL_KERNEL := $(LOCAL_PATH)/zImage
+else
+    LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
 
-# Keylayout
 PRODUCT_COPY_FILES += \
-    device/samsung/p6810/usr/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-    device/samsung/p6810/usr/keylayout/Generic.kl:system/usr/keylayout/Generic.kl \
-    device/samsung/p6810/usr/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-    device/samsung/p6810/usr/keylayout/max8997-muic.kl:system/usr/keylayout/max8997-muic.kl \
-    device/samsung/p6810/usr/keylayout/melfas-touchkey.kl:system/usr/keylayout/melfas-touchkey.kl \
-    device/samsung/p6810/usr/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
-    device/samsung/p6810/usr/keylayout/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl \
-    device/samsung/p6810/usr/keylayout/sec_key.kl:system/usr/keylayout/sec_key.kl \
-    device/samsung/p6810/usr/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
-    device/samsung/p6810/usr/keylayout/Vendor_05ac_Product_0239.kl:system/usr/keylayout/Vendor_05ac_Product_0239.kl \
-    device/samsung/p6810/usr/keylayout/Vendor_22b8_Product_093d.kl:system/usr/keylayout/Vendor_22b8_Product_093d.kl \
-    device/samsung/p6810/usr/keylayout/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_028e.kl \
-    device/samsung/p6810/usr/keylayout/Vendor_046d_Product_c216.kl:system/usr/keylayout/Vendor_046d_Product_c216.kl \
-    device/samsung/p6810/usr/keylayout/Vendor_046d_Product_c294.kl:system/usr/keylayout/Vendor_046d_Product_c294.kl \
-    device/samsung/p6810/usr/keylayout/Vendor_046d_Product_c299.kl:system/usr/keylayout/Vendor_046d_Product_c299.kl \
-    device/samsung/p6810/usr/keylayout/Vendor_046d_Product_c532.kl:system/usr/keylayout/Vendor_046d_Product_c532.kl \
-    device/samsung/p6810/usr/keylayout/Vendor_054c_Product_0268.kl:system/usr/keylayout/Vendor_054c_Product_0268.kl
+	$(LOCAL_KERNEL):kernel
 
-# Keychars
-PRODUCT_COPY_FILES += \
-    device/samsung/p6810/usr/keychars/Generic.kcm:system/usr/keychars/Generic.kcm \
-    device/samsung/p6810/usr/keychars/qwerty.kcm:system/usr/keychars/qwerty.kcm \
-    device/samsung/p6810/usr/keychars/qwerty2.kcm:system/usr/keychars/qwerty2.kcm \
-    device/samsung/p6810/usr/keychars/Virtual.kcm:system/usr/keychars/Virtual.kcm
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
-# Idc
-PRODUCT_COPY_FILES += \
-    device/samsung/p6810/usr/idc/melfas_ts.idc:system/usr/idc/melfas_ts.idc \
-    device/samsung/p6810/usr/idc/mxt224_ts_input.idc:system/usr/idc/mxt224_ts_input.idc \
-    device/samsung/p6810/usr/idc/qwerty.idc:system/usr/idc/qwerty.idc \
-    device/samsung/p6810/usr/idc/qwerty2.idc:system/usr/idc/qwerty2.idc \
-    device/samsung/p6810/usr/idc/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc
+$(call inherit-product, $(LOCAL_PATH)/p6810_base.mk)
 
-# Kernel modules for ramdisk
-RAMDISK_MODULES := $(addprefix device/samsung/p6810/modules/,cfg80211.ko \
-    gspca_main.ko j4fs.ko lib80211.ko mac80211.ko pcmcia_core.ko pcmcia.ko \
-    pcmcia_rsrc.ko ray_cs.ko scsi_wait_scan.ko)
-PRODUCT_COPY_FILES += $(foreach module,\
-	$(RAMDISK_MODULES),\
-	$(module):root/lib/modules/$(notdir $(module)))
-
-# Other kernel modules not in ramdisk
-PRODUCT_COPY_FILES += $(foreach module,\
-	$(filter-out $(RAMDISK_MODULES),$(wildcard device/samsung/p6810/modules/*.ko)),\
-	$(module):system/lib/modules/$(notdir $(module)))
-
-# Kernel modules for recovery ramdisk
-PRODUCT_COPY_FILES += \
-    device/samsung/p6810/modules/j4fs.ko:recovery/root/lib/modules/j4fs.ko
-
-# The kernel itself
-PRODUCT_COPY_FILES += \
-    device/samsung/p6810/zImage:kernel
-
-$(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
 $(call inherit-product-if-exists, vendor/samsung/p6810/p6810-vendor.mk)
+
+# Discard inherited values and use our own instead.
+PRODUCT_NAME := p6810
+PRODUCT_DEVICE := p6810
+PRODUCT_BRAND := samsung
+PRODUCT_MANUFACTURER := samsung
+PRODUCT_MODEL := GT-P6810
