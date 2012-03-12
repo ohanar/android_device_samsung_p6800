@@ -25,7 +25,11 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
+$(call inherit-product, device/samsung/c210-common/c210-common_base.mk)
+
 $(call inherit-product, $(LOCAL_PATH)/p6810_base.mk)
+
+$(call inherit-product-if-exists, vendor/samsung/c210/c210-vendor.mk)
 
 $(call inherit-product-if-exists, vendor/samsung/p6810/p6810-vendor.mk)
 
