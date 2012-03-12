@@ -134,23 +134,17 @@ adb pull /system/lib/hw/sensors.s5pc210.so ../../../vendor/$MANUFACTURER/$COMMON
 adb pull /system/lib/hw/gps.s5pc210.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/gps.s5pc210.so
 
 # WIFI
-#adb pull /system/bin/bcm4330B1.hcd ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bcm4330B1.hcd
-#adb pull /system/etc/wifi/bcm4330_apsta.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bcm4330_apsta.bin
-#adb pull /system/etc/wifi/bcm4330_mfg.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bcm4330_mfg.bin
-#adb pull /system/etc/wifi/bcm4330_p2p.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bcm4330_p2p.bin
-#adb pull /system/etc/wifi/bcm4330_sta.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bcm4330_sta.bin
-#adb pull /system/etc/wifi/nvram_mfg.txt ../../../vendor/$MANUFACTURER/$COMMON/proprietary/nvram_mfg.txt
-#adb pull /system/etc/wifi/nvram_mfg.txt_murata ../../../vendor/$MANUFACTURER/$COMMON/proprietary/nvram_mfg.txt_murata
-#adb pull /system/etc/wifi/nvram_net.txt ../../../vendor/$MANUFACTURER/$COMMON/proprietary/nvram_net.txt
-#adb pull /system/etc/wifi/nvram_net.txt_AU ../../../vendor/$MANUFACTURER/$COMMON/proprietary/nvram_net.txt_AU
-#adb pull /system/etc/wifi/nvram_net.txt_IL ../../../vendor/$MANUFACTURER/$COMMON/proprietary/nvram_net.txt_IL
-#adb pull /system/etc/wifi/nvram_net.txt_murata ../../../vendor/$MANUFACTURER/$COMMON/proprietary/nvram_net.txt_murata
-#adb pull /system/etc/wifi/nvram_net.txt_murata_AU ../../../vendor/$MANUFACTURER/$COMMON/proprietary/nvram_net.txt_murata_AU
-#adb pull /system/etc/wifi/nvram_net.txt_murata_IL ../../../vendor/$MANUFACTURER/$COMMON/proprietary/nvram_net.txt_murata_IL
-#adb pull /system/etc/wifi/nvram_net.txt_murata_SG ../../../vendor/$MANUFACTURER/$COMMON/proprietary/nvram_net.txt_murata_SG
-#adb pull /system/etc/wifi/nvram_net.txt_murata_TN ../../../vendor/$MANUFACTURER/$COMMON/proprietary/nvram_net.txt_murata_TN
-#adb pull /system/etc/wifi/nvram_net.txt_SG ../../../vendor/$MANUFACTURER/$COMMON/proprietary/nvram_net.txt_SG
-#adb pull /system/etc/wifi/nvram_net.txt_TN ../../../vendor/$MANUFACTURER/$COMMON/proprietary/nvram_net.txt_TN
+adb pull /system/wifi/ar6000.ko ../../../vendor/$MANUFACTURER/$COMMON/proprietary/ar6000.ko
+adb pull /system/wifi/ath6k/AR6003/hw2.1.1/athtcmd_ram.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/athtcmd_ram.bin
+adb pull /system/wifi/ath6k/AR6003/hw2.1.1/athwlan.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/athwlan.bin
+adb pull /system/wifi/ath6k/AR6003/hw2.1.1/athwlan_mobile.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/athwlan_mobile.bin
+adb pull /system/wifi/ath6k/AR6003/hw2.1.1/athwlan_router.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/athwlan_router.bin
+adb pull /system/wifi/ath6k/AR6003/hw2.1.1/athwlan_tablet.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/athwlan_tablet.bin
+adb pull /system/wifi/ath6k/AR6003/hw2.1.1/bdata.SD31.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bdata.SD31.bin
+adb pull /system/wifi/ath6k/AR6003/hw2.1.1/bdata.SD31.tcmd.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/bdata.SD31.tcmd.bin
+adb pull /system/wifi/ath6k/AR6003/hw2.1.1/data.patch.hw3_0.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/data.patch.hw3_0.bin
+adb pull /system/wifi/ath6k/AR6003/hw2.1.1/device.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/device.bin
+adb pull /system/wifi/ath6k/AR6003/hw2.1.1/otp.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/otp.bin
 
 # LPM
 adb pull /system/bin/immvibed ../../../vendor/$MANUFACTURER/$COMMON/proprietary/immvibed
@@ -331,24 +325,18 @@ PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/gps.s5pc210.so:system/lib/hw/gps.s5pc210.so
 
 # WIFI
-#PRODUCT_COPY_FILES += \\
-#    vendor/__MANUFACTURER__/__COMMON__/proprietary/bcm4330B1.hcd:system/bin/bcm4330B1.hcd \\
-#    vendor/__MANUFACTURER__/__COMMON__/proprietary/bcm4330_apsta.bin:system/etc/wifi/bcm4330_apsta.bin \\
-#    vendor/__MANUFACTURER__/__COMMON__/proprietary/bcm4330_mfg.bin:system/etc/wifi/bcm4330_mfg.bin \\
-#    vendor/__MANUFACTURER__/__COMMON__/proprietary/bcm4330_p2p.bin:system/etc/wifi/bcm4330_p2p.bin \\
-#    vendor/__MANUFACTURER__/__COMMON__/proprietary/bcm4330_sta.bin:system/etc/wifi/bcm4330_sta.bin \\
-#    vendor/__MANUFACTURER__/__COMMON__/proprietary/nvram_mfg.txt:system/etc/wifi/nvram_mfg.txt \\
-#    vendor/__MANUFACTURER__/__COMMON__/proprietary/nvram_mfg.txt_murata:system/etc/wifi/nvram_mfg.txt_murata \\
-#    vendor/__MANUFACTURER__/__COMMON__/proprietary/nvram_net.txt:system/etc/wifi/nvram_net.txt \\
-#    vendor/__MANUFACTURER__/__COMMON__/proprietary/nvram_net.txt_AU:system/etc/wifi/nvram_net.txt_AU \\
-#    vendor/__MANUFACTURER__/__COMMON__/proprietary/nvram_net.txt_IL:system/etc/wifi/nvram_net.txt_IL \\
-#    vendor/__MANUFACTURER__/__COMMON__/proprietary/nvram_net.txt_murata:system/etc/wifi/nvram_net.txt_murata \\
-#    vendor/__MANUFACTURER__/__COMMON__/proprietary/nvram_net.txt_murata_AU:system/etc/wifi/nvram_net.txt_murata_AU \\
-#    vendor/__MANUFACTURER__/__COMMON__/proprietary/nvram_net.txt_murata_IL:system/etc/wifi/nvram_net.txt_murata_IL \\
-#    vendor/__MANUFACTURER__/__COMMON__/proprietary/nvram_net.txt_murata_SG:system/etc/wifi/nvram_net.txt_murata_SG \\
-#    vendor/__MANUFACTURER__/__COMMON__/proprietary/nvram_net.txt_murata_TN:system/etc/wifi/nvram_net.txt_murata_TN \\
-#    vendor/__MANUFACTURER__/__COMMON__/proprietary/nvram_net.txt_SG:system/etc/wifi/nvram_net.txt_SG \\
-#    vendor/__MANUFACTURER__/__COMMON__/proprietary/nvram_net.txt_TN:system/etc/wifi/nvram_net.txt_TN
+PRODUCT_COPY_FILES += \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/ar6000.ko:system/wifi/ar6000.ko \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/athtcmd_ram.bin:system/wifi/athtcmd_ram.bin \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/athwlan.bin:system/wifi/athwlan.bin \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/athwlan_mobile.bin:system/wifi/athwlan_mobile.bin \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/athwlan_router.bin:system/wifi/athwlan_router.bin \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/athwlan_tablet.bin:system/wifi/athwlan_tablet.bin \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/bdata.SD31.bin:system/wifi/bdata.SD31.bin \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/bdata.SD31.tcmd.bin:system/wifi/bdata.SD31.tcmd.bin \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/data.patch.hw3_0.bin:system/wifi/data.patch.hw3_0.bin \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/device.bin:system/wifi/device.bin \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/otp.bin:system/wifi/otp.bin
 
 # LPM
 PRODUCT_COPY_FILES += \\
