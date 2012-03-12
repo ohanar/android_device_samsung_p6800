@@ -153,6 +153,7 @@ adb pull /system/wifi/ath6k/AR6003/hw2.1.1/device.bin ../../../vendor/$MANUFACTU
 adb pull /system/wifi/ath6k/AR6003/hw2.1.1/otp.bin ../../../vendor/$MANUFACTURER/$COMMON/proprietary/otp.bin
 
 # LPM
+adb pull /system/bin/charging_mode ../../../vendor/$MANUFACTURER/$COMMON/proprietary/charging_mode
 adb pull /system/bin/immvibed ../../../vendor/$MANUFACTURER/$COMMON/proprietary/immvibed
 adb pull /system/bin/playlpm ../../../vendor/$MANUFACTURER/$COMMON/proprietary/playlpm
 adb pull /system/lib/libQmageDecoder.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary/libQmageDecoder.so
@@ -355,6 +356,7 @@ PRODUCT_COPY_FILES += \\
 
 # LPM
 PRODUCT_COPY_FILES += \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/charging_mode:system/bin/charging_mode \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/immvibed:system/bin/immvibed \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/playlpm:system/bin/playlpm \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libQmageDecoder.so:system/lib/libQmageDecoder.so \\
