@@ -20,9 +20,8 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/init.smdkc210.rc:root/init.smdkc210.rc
 
 # Kernel modules for ramdisk
-RAMDISK_MODULES := $(addprefix $(LOCAL_PATH)/modules/,cfg80211.ko \
-    gspca_main.ko j4fs.ko lib80211.ko mac80211.ko pcmcia_core.ko pcmcia.ko \
-    pcmcia_rsrc.ko ray_cs.ko scsi_wait_scan.ko)
+RAMDISK_MODULES := $(addprefix $(LOCAL_PATH)/modules/, gspca_main.ko \
+    j4fs.ko scsi_wait_scan.ko)
 PRODUCT_COPY_FILES += $(foreach module,\
 	$(RAMDISK_MODULES),\
 	$(module):root/lib/modules/$(notdir $(module)))
