@@ -17,7 +17,7 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # The Tab 7.7 has a xlarge hpdi screen
 PRODUCT_AAPT_CONFIG := xlarge hdpi
-PRODUCT_AAPT_PREF_CONFIG := hpdi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_LOCALES += hdpi
 
 # Init files
