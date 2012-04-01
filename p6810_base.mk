@@ -20,6 +20,9 @@ PRODUCT_AAPT_CONFIG := xlarge hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_LOCALES += hdpi
 
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.sf.lcd_density=197
+
 # Init files
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/init.smdkc210.rc:root/init.smdkc210.rc
