@@ -23,7 +23,7 @@ endif
 PRODUCT_COPY_FILES += \
 	$(LOCAL_KERNEL):kernel
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 $(call inherit-product, device/samsung/c210-common/c210_base.mk)
 
