@@ -15,19 +15,19 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := GT-P6810
+PRODUCT_RELEASE_NAME := GT-P6800
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
 # Inherit device configuration
-$(call inherit-product, $(LOCAL_PATH)/p6810.mk)
+$(call inherit-product, $(LOCAL_PATH)/p6800.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := p6810
-PRODUCT_NAME := cm_p6810
+PRODUCT_DEVICE := p6800
+PRODUCT_NAME := cm_p6800
 PRODUCT_BRAND := Samsung
-PRODUCT_MODEL := GT-P6810
+PRODUCT_MODEL := GT-P6800
 
 #Set build fingerprint / ID / Prduct Name ect.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=GT-P6810 BUILD_FINGERPRINT="samsung/GT-P6810/GT-P6810:4.0.4/IMM76D/DTLB1:user/release-keys" PRIVATE_BUILD_DESC="GT-P6810-user 4.0.4 IMM76D DTLB1 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=GT-P6800 BUILD_FINGERPRINT="samsung/GT-P6800/GT-P6800:4.0.4/IMM76D/DTLB1:user/release-keys" PRIVATE_BUILD_DESC="GT-P6800-user 4.0.4 IMM76D DTLB1 release-keys"

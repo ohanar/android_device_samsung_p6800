@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/p6810.mk
+    $(LOCAL_DIR)/p6800.mk

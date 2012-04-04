@@ -18,10 +18,10 @@
 -include device/samsung/c210-common/BoardConfigCommon.mk
 
 # Use the non-open-source parts, if they're present
--include vendor/samsung/p6810/BoardConfigVendor.mk
+-include vendor/samsung/p6800/BoardConfigVendor.mk
 
-TARGET_OTA_ASSERT_DEVICE := p6810,GT-P6810
+TARGET_OTA_ASSERT_DEVICE := p6800,GT-P6800
 
-TARGET_PREBUILT_KERNEL := device/samsung/p6810/zImage
+TARGET_PREBUILT_KERNEL := device/samsung/p6800/zImage
 
 TARGET_BOOTANIMATION_NAME := horizontal-1280x800
