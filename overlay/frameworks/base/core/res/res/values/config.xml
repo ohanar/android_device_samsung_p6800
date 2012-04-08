@@ -45,31 +45,29 @@
          Zone N + 1     array[N] <= LUX < infinity
 
          Must be overridden in platform specific overlays -->
-    <!-- The p5wifi light sensors reports 20,200,1000,2000,8000,20000,40000,70000 -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>100</item>
-        <item>200</item>
-        <item>400</item>
-        <item>1000</item>
-        <item>3000</item>
+        <item>12</item>
+        <item>120</item>
+        <item>1200</item>
+        <item>12000</item>
+        <item>16000</item>
     </integer-array>
 
     <!-- Array of output values for LCD backlight corresponding to the LUX values
          in the config_autoBrightnessLevels array.  This array should have size one greater
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
-    <!-- Values taken from stock Honeycomb 3.1 firmware and confirmed still being the same in stock 3.2 (KJ5) firmware -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>16</item>
-        <item>40</item>
+        <item>30</item>
         <item>60</item>
-        <item>70</item>
-        <item>70</item>
+        <item>100</item>
+        <item>120</item>
+        <item>120</item>
         <item>250</item>
     </integer-array>
 
     <!-- Minimum screen brightness allowed by the power manager. -->
-    <integer name="config_screenBrightnessDim">10</integer>
+    <integer name="config_screenBrightnessDim">30</integer>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          USB interfaces.  If the device doesn't want to support tething over USB this should
