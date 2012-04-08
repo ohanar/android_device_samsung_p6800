@@ -1,5 +1,5 @@
 #
-# system.prop for the p6810
+# system.prop for the p6800
 #
 
 rild.libpath=/system/lib/libsec-ril.so
