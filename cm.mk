@@ -20,6 +20,9 @@ PRODUCT_RELEASE_NAME := GT-P6800
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
+# Inherit GSM common stuff
+$(call inherit-product, vendor/cm/config/gsm.mk)
+
 # Inherit device configuration
 $(call inherit-product, $(LOCAL_PATH)/p6800.mk)
 
