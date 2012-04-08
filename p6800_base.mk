@@ -20,8 +20,9 @@ PRODUCT_AAPT_CONFIG := xlarge hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 PRODUCT_LOCALES += hdpi
 
+# needs to be overwritten to get android to scale appropriately
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sf.lcd_density=197
+	ro.sf.lcd_density=160
 
 # Init files
 PRODUCT_COPY_FILES += \
