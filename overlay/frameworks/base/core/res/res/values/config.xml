@@ -24,6 +24,12 @@
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
 
+    <!-- This tablet is "voice capable". -->
+    <bool name="config_voice_capable">true</bool>
+
+    <!-- This tablet allows sms service. -->
+    <bool name="config_sms_capable">true</bool>
+
     <!-- The default iface on which to monitor data use -->
     <string name="config_datause_iface">wlan0</string>
 
