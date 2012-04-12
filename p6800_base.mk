@@ -28,6 +28,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/init.smdkc210.rc:root/init.smdkc210.rc
 
+# These are the hardware-specific features
+PRODUCT_COPY_FILES += \
+	frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
+
 # Kernel modules for ramdisk
 RAMDISK_MODULES := $(addprefix $(LOCAL_PATH)/modules/, gspca_main.ko \
     j4fs.ko scsi_wait_scan.ko)
