@@ -31,19 +31,3 @@ PRODUCT_COPY_FILES += \
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
 	frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
-
-# Kernel modules for ramdisk
-RAMDISK_MODULES := $(addprefix $(LOCAL_PATH)/modules/, gspca_main.ko \
-    j4fs.ko scsi_wait_scan.ko)
-PRODUCT_COPY_FILES += $(foreach module,\
-	$(RAMDISK_MODULES),\
-	$(module):root/lib/modules/$(notdir $(module)))
-
-# Other kernel modules not in ramdisk
-PRODUCT_COPY_FILES += $(foreach module,\
-	$(filter-out $(RAMDISK_MODULES),$(wildcard $(LOCAL_PATH)/modules/*.ko)),\
-	$(module):system/lib/modules/$(notdir $(module)))
-
-# Kernel modules for recovery ramdisk
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/modules/j4fs.ko:recovery/root/lib/modules/j4fs.ko
