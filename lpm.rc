@@ -1,0 +1,9 @@
+import lpm.common.rc
+
+on fs
+	mount ext4 /dev/block/mmcblk0p9 /system wait ro
+	mount ext4 /dev/block/mmcblk0p10 /data nosuid nodev noatime wait
+
+	mkdir /data/log 0777
+	mkdir /data/anr 0777
+    mount ext4 /dev/block/mmcblk0p10 /data remount ro
