@@ -1,12 +1,11 @@
 import init.smdkc210.common.rc
 
 on fs
-# mount ext4 partitions
+    # mount ext4 partitions
     mount ext4 /dev/block/mmcblk0p9 /system ro wait noatime
     mount ext4 /dev/block/mmcblk0p10 /data nosuid nodev noatime wait
     mount ext4 /dev/block/mmcblk0p7 /cache nosuid nodev noatime wait
-    
-    mkdir /efs
-    mount ext4 /dev/block/mmcblk0p1 /efs nosuid nodev noatime wait
-    chown radio system /efs
-    chmod 0771 /efs
+
+on boot
+    setprop ro.build.product GT-P6800
+    setprop ro.product.device GT-P6800
