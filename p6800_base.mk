@@ -24,6 +24,10 @@ PRODUCT_LOCALES += hdpi
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=160
 
+# We have MMS
+PRODUCT_PACKAGES += \
+	Mms
+
 # Init files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.smdkc210.rc:root/init.smdkc210.rc \
