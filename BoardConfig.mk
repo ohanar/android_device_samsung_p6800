@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-# Include c210-common
--include device/samsung/c210-common/BoardConfigCommon.mk
+# Include common exynos4tab configuration
+-include device/samsung/exynos4tab-common/BoardConfigCommon.mk
 
 # Use the non-open-source parts, if they're present
 -include vendor/samsung/p6800/BoardConfigVendor.mk
