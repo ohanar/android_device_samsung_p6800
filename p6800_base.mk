@@ -30,8 +30,7 @@ PRODUCT_PACKAGES += \
 
 # Init files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.smdkc210.rc:root/init.smdkc210.rc \
-    $(LOCAL_PATH)/lpm.rc:root/lpm.rc
+    $(LOCAL_PATH)/init.smdk4210.fstab.rc:root/init.smdk4210.fstab.rc
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
