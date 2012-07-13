@@ -4,8 +4,8 @@
         "target_path": "device/samsung/exynos4tab-common"
     },
     {
-        "repository": "android_kernel_samsung_smdk4210",
-        "target_path": "kernel/samsung/smdk4210"
+        "repository": "android_kernel_samsung_smdk4210-tab",
+        "target_path": "kernel/samsung/smdk4210-tab"
     },
     {
         "repository": "android_packages_apps_SamsungServiceMode",
