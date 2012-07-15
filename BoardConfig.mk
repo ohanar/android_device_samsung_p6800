@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-# Include common exynos4tab configuration
--include device/samsung/exynos4tab-common/BoardConfigCommon.mk
+# Include common smdk4210-tab configuration
+-include device/samsung/smdk4210-tab/BoardConfigCommon.mk
 
 # Use the non-open-source parts, if they're present
 -include vendor/samsung/p6800/BoardConfigVendor.mk
