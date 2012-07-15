@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+$(call inherit-product, vendor/cm/config/gsm.mk)
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 $(call inherit-product, device/samsung/smdk4210-tab/smdk4210-tab_base.mk)
@@ -22,7 +24,7 @@ $(call inherit-product, $(LOCAL_PATH)/p6800_base.mk)
 
 $(call inherit-product-if-exists, vendor/samsung/smdk4210-tab/smdk4210-tab_base.mk)
 
-$(call inherit-product-if-exists, vendor/samsung/p6800/p6800-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/p6800/p6800_base.mk)
 
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := p6800

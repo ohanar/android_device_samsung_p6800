@@ -1,0 +1,1 @@
+system/lib/hw/sensors.exynos4.so
