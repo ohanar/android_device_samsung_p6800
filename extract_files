@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+#
+# Copyright (C) 2012 The CyanogenMod Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import os, sys, types
+
+# Hack to add common extract_files as a module without byte-compiling
+module_path, module_name = os.path.split(os.path.realpath(__file__))
+module_path = os.path.dirname(module_path)
+module_path = os.path.join(module_path, 'smdk4210-tab', module_name)
+module = types.ModuleType(module_name)
+module_file = open(module_path, 'rU')
+exec module_file in module.__dict__
+sys.modules['extract_files'] = module
+
+from extract_files import VendorCreator, vc0
+
+vc1 = VendorCreator()
+vc1.add('props_lists')
+
+if __name__ == '__main__':
+    vc0.generate()
+    vc1.generate()
