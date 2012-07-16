@@ -14,18 +14,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import os, sys, types
+import os, types
 
-# Hack to add common extract_files as a module without byte-compiling
+# Find common extract_files path and name
 module_path, module_name = os.path.split(os.path.realpath(__file__))
 module_path = os.path.dirname(module_path)
 module_path = os.path.join(module_path, 'smdk4210-tab', module_name)
+
+# Hack to import common extract_files as a module without byte-compiling
 module = types.ModuleType(module_name)
 module_file = open(module_path, 'rU')
 exec module_file in module.__dict__
-sys.modules['extract_files'] = module
 
-from extract_files import VendorCreator, vc0
+VendorCreator, vc0 = module.VendorCreator, module.vc0
 
 vc1 = VendorCreator()
 vc1.add('props_lists')
