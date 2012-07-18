@@ -13,8 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-
 # The Tab 7.7 has a xlarge hpdi screen
 PRODUCT_AAPT_CONFIG := xlarge hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
