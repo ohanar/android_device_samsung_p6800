@@ -26,10 +26,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
 	Mms
 
-# Init files
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.smdk4210.fstab.rc:root/init.smdk4210.fstab.rc
-
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
