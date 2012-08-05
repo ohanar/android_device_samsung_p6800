@@ -1,4 +1,4 @@
 system/bin/rild
-:system/lib/libril.so:obj/lib/libril.so
+system/lib/libril.so:libsamsungril
 system/lib/libsec-ril.so
-:system/lib/libsecril-client.so:obj/lib/libsecril-client.so
+system/lib/libsecril-client.so:libsecril-client
