@@ -15,7 +15,7 @@
 #
 
 # Inherit device configuration
-$(call inherit-product, $(LOCAL_PATH)/p6800_base.mk)
+$(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_BRAND := Samsung
