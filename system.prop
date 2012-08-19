@@ -1,3 +1,6 @@
+# RIL
 rild.libpath=/system/lib/libsec-ril.so
 rild.libargs=-d /dev/ttyS0
 ro.telephony.ril_class=Smdk4210RIL
+# tvdpi
+ro.sf.lcd_density=213
