@@ -14,6 +14,10 @@
 # limitations under the License.
 #
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 800
+TARGET_SCREEN_WIDTH := 1280
+
 # Inherit device configuration
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
