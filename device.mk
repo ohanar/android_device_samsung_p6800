@@ -23,3 +23,6 @@ $(call inherit-product-if-exists, vendor/samsung/p6800/vendor.mk)
 # GSM
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
+
+PRODUCT_PACKAGES += \
+    SamsungServiceMode
