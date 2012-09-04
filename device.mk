@@ -20,8 +20,8 @@ $(call inherit-product, device/samsung/smdk4210-tab/device.mk)
 $(call inherit-product-if-exists, vendor/samsung/smdk4210-tab/vendor.mk)
 $(call inherit-product-if-exists, vendor/samsung/p6800/vendor.mk)
 
-# GSM
 PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
 PRODUCT_PACKAGES += \
