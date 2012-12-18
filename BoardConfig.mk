@@ -22,3 +22,5 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/p6800/overlay
 TARGET_OTA_ASSERT_DEVICE := p6800,GT-P6800
 
 TARGET_KERNEL_CONFIG := cyanogenmod_p6800_defconfig
+
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/p6800/bluetooth
